@@ -20,7 +20,7 @@ loop:
 
     move $a0,$s0 #function value
     move $a1,$s1
-    jal calculateBMI #©I¥s calculateBMI¡Aµ²ªG¦b $v0
+    jal calculateBMI #å‘¼å« calculateBMIï¼Œçµæœåœ¨ $v0
     move $s2,$v0 #a0=bmi=printResult(bmi)
     move $a0,$s2
     jal printResult
@@ -36,7 +36,7 @@ calculateBMI:
     mul $t0,$a1,10000
     mul $t1,$a0,$a0
     div $t0,$t1
-    mflo $v0 #°Ó±qlo¨ú¥X¦s¨ìv0,v0¥Î©óÀx¦s¨ç¼Æªğ¦^­È v0=bmi
+    mflo $v0 
 
     lw $s0,0($sp)
     lw $s1,4($sp)
@@ -64,7 +64,7 @@ printElse:
     j end_print
 printUnderweight:
     li $v0, 4   # syscall 4 = print string
-    la $a0, underweight # ¸ü¤J "underweight" ¦r¦ê
+    la $a0, underweight # è¼‰å…¥ "underweight" å­—ä¸²
     syscall
     j end_print
 printOverweight:
